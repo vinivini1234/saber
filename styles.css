@@ -6,6 +6,7 @@ body {
     background-image: url('background.jpeg');
     background-size: cover;
     min-height: 100vh;
+    padding-top: 118px; /* 43px (azul) + 75px (branca) - ADICIONE ESTA LINHA */
 }
 
 /* BARRA AZUL SUPERIOR */
@@ -19,8 +20,11 @@ body::before {
     text-align: center;
     font-weight: bold;
     font-size: 18px;
-    position: relative;
+    position: fixed; /* MUDEI PARA FIXED */
+    top: 0;
+    left: 0;
     width: 100%;
+    z-index: 100;
 }
 
 /* BARRA BRANCA COM LOGO */
@@ -31,18 +35,20 @@ body::after {
     background-size: auto 60px;
     height: 75px;
     border-bottom: 1px solid #ddd;
-    position: relative;
+    position: fixed; /* MUDEI PARA FIXED */
+    top: 43px; /* ABAIXO DA BARRA AZUL */
+    left: 0;
     width: 100%;
-    margin-bottom: 20px;
+    z-index: 100;
 }
 
 /* MENU DE NAVEGAÇÃO */
 .main-nav {
     position: fixed;
-    top: 150px; /* Abaixo das barras */
+    top: 150px; /* Abaixo das barras (43 + 75 + 32px de margem) */
     left: 20px;
     background: transparent;
-    z-index: 100;
+    z-index: 101; /* MAIS ALTO QUE AS BARRAS */
 }
 
 .main-nav ul {
@@ -71,11 +77,9 @@ body::after {
     background-color: rgba(0, 84, 166, 0.9);
 }
 
-/* ESPAÇO PARA O CONTEÚDO (onde ficarão as animações) */
-body::after {
-    /* Já definido acima */
+/* CONTEÚDO PRINCIPAL - ADICIONE ESTE ESTILO */
+body > *:not(.main-nav):not(::before):not(::after) {
+    position: relative;
+    z-index: 1;
+    margin-top: 20px; /* Espaço extra */
 }
-
-/* O conteúdo das páginas HTML do Animate ficará automaticamente 
-   abaixo das barras, pois elas usam position: relative */
-
