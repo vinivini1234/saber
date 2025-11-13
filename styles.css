@@ -7,7 +7,7 @@ body {
     background-size: cover;
     padding-top: 118px; /* 43px (barra azul) + 75px (barra branca) */
     min-height: 100vh;
-    overflow: hidden; /* Remove barras de rolagem */
+
     position: relative; /* Contexto para posicionamento absoluto */
 }
 
@@ -178,4 +178,5 @@ nav a:hover {
         font-size: 14px;
     }
 }
+
 
