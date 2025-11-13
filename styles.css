@@ -44,12 +44,14 @@ body::after {
 
 /* CONTAINER PRINCIPAL E IFRAME */
 #viewer-container {
-    position: fixed;
-    top: 118px; /* Inicia abaixo das barras */
+    position: relative;
+    top: 0;
     left: 0;
     width: 100%;
-    height: calc(100vh - 118px); /* 100% da viewport menos altura das barras */
-    z-index: 10; /* Fica abaixo das barras */
+    height: calc(100vh - 118px);
+    min-height: 600px;
+    z-index: 10;
+    overflow: hidden; /* Aplica overflow aqui instead */
 }
 
 #embedded-human {
@@ -59,7 +61,6 @@ body::after {
     border: none;
     display: block;
 }
-
 /* NAVEGAÇÃO - ESTILO VERTICAL */
 nav {
     position: fixed;
@@ -177,3 +178,4 @@ nav a:hover {
         font-size: 14px;
     }
 }
+
