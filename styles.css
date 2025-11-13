@@ -5,16 +5,12 @@ body {
     font-family: Arial, sans-serif;
     background-image: url('background.jpeg');
     background-size: cover;
-    padding-top: 118px; /* 43px (barra azul) + 75px (barra branca) */
+    /* REMOVA: padding-top: 118px; */
     min-height: 100vh;
-
-    position: relative; /* Contexto para posicionamento absoluto */
 }
 
-/* BARRA AZUL (FIXA NO TOPO) */
-body::before {
-    content: ""; /* Texto do cabeçalho */
-    display: block;
+/* BARRA AZUL (AGORA NO FLUXO NORMAL) */
+.header-blue {
     background-color: #0054A6;
     color: white;
     height: 43px;
@@ -22,52 +18,35 @@ body::before {
     text-align: center;
     font-weight: bold;
     font-size: 18px;
-    position: fixed;
-    top: 0;
+    position: relative; /* Mude de fixed para relative */
     width: 100%;
-    z-index: 100; /* Garante que fique acima do conteúdo */
 }
 
-/* BARRA BRANCA (FIXA ABAIXO DA AZUL) */
-body::after {
-    content: "";
-    display: block;
+/* BARRA BRANCA (AGORA NO FLUXO NORMAL) */
+.header-white {
     background: white url('logo.png') no-repeat 20px center;
     background-size: auto 60px;
     height: 75px;
     border-bottom: 1px solid #ddd;
-    position: fixed;
-    top: 43px;
+    position: relative; /* Mude de fixed para relative */
     width: 100%;
-    z-index: 100; /* Mesmo nível da barra azul */
 }
 
-/* CONTAINER PRINCIPAL E IFRAME */
+/* CONTEÚDO PRINCIPAL - AGORA VAI FICAR ABAIXO DAS BARRAS */
 #viewer-container {
     position: relative;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: calc(100vh - 118px);
     min-height: 600px;
-    z-index: 10;
-    overflow: hidden; /* Aplica overflow aqui instead */
+    margin-top: 0; /* Já vai ficar automaticamente abaixo */
 }
 
-#embedded-human {
-    width: 100%;
-    height: 100%;
-    min-height: 600px;
-    border: none;
-    display: block;
-}
-/* NAVEGAÇÃO - ESTILO VERTICAL */
+/* NAVEGAÇÃO - PODE MANTER FIXA SE QUISER */
 nav {
     position: fixed;
-    top: 150px; /* Abaixo das barras + margem */
+    top: 150px;
     left: 20px;
     background: transparent;
-    z-index: 100; /* Mesmo nível das barras */
+    z-index: 100;
 }
 
 nav ul {
@@ -102,81 +81,9 @@ nav a:hover {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    z-index: 101; /* Acima da barra azul */
-    line-height: 43px; /* Centraliza verticalmente */
+    line-height: 43px;
 }
 
 .home-link:hover {
     text-decoration: underline;
 }
-/* ... (mantenha todo o CSS existente acima) ... */
-
-/* AJUSTES OTIMIZADOS PARA DISPOSITIVOS MÓVEIS */
-@media (max-width: 768px) {
-    body {
-        padding-bottom: 30px;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch; /* Melhora rolagem no iOS */
-    }
-    
-    #viewer-container {
-        position: relative;
-        top: 118px;
-        height: auto;
-        min-height: calc(100vh - 118px);
-        padding-bottom: 30px;
-        overflow: visible; /* Permite que conteúdo extra seja visível */
-    }
-    
-    #embedded-human {
-        min-height: 60vh;
-        height: auto;
-        max-height: calc(100vh - 150px); /* Considera espaço adicional */
-    }
-    
-    nav {
-        position: relative;
-        top: initial;
-        left: initial;
-        margin: 15px auto;
-        width: 90%;
-        text-align: center;
-    }
-    
-    nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    nav li {
-        margin: 8px;
-    }
-    
-    nav a {
-        font-size: 16px;
-        padding: 8px 12px;
-        white-space: nowrap;
-    }
-    
-    /* Ajustes específicos para a barra de cabeçalho */
-    body::before {
-        font-size: 16px;
-        padding: 0 10px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    
-    body::after {
-        background-position: 10px center;
-        background-size: auto 50px;
-    }
-    
-    .home-link {
-        left: 10px;
-        font-size: 14px;
-    }
-}
-
-
