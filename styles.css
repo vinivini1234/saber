@@ -12,7 +12,7 @@ body {
 body::before {
     content: "SABER - Sistema de Aprendizagem";
     display: block;
-    background-color: #0054A6;
+    background-color: #004a8d;
     color: white;
     height: 43px;
     line-height: 43px;
@@ -78,3 +78,4 @@ body::after {
 
 /* O conteúdo das páginas HTML do Animate ficará automaticamente 
    abaixo das barras, pois elas usam position: relative */
+
