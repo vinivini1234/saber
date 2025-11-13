@@ -1,16 +1,17 @@
-/* RESET */
+/* RESET E CONFIGURAÇÕES GERAIS */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     background-image: url('background.jpeg');
     background-size: cover;
-    /* REMOVA: padding-top: 118px; */
     min-height: 100vh;
 }
 
-/* BARRA AZUL (AGORA NO FLUXO NORMAL) */
-.header-blue {
+/* BARRA AZUL SUPERIOR */
+body::before {
+    content: "SABER - Sistema de Aprendizagem";
+    display: block;
     background-color: #0054A6;
     color: white;
     height: 43px;
@@ -18,72 +19,62 @@ body {
     text-align: center;
     font-weight: bold;
     font-size: 18px;
-    position: relative; /* Mude de fixed para relative */
+    position: relative;
     width: 100%;
 }
 
-/* BARRA BRANCA (AGORA NO FLUXO NORMAL) */
-.header-white {
+/* BARRA BRANCA COM LOGO */
+body::after {
+    content: "";
+    display: block;
     background: white url('logo.png') no-repeat 20px center;
     background-size: auto 60px;
     height: 75px;
     border-bottom: 1px solid #ddd;
-    position: relative; /* Mude de fixed para relative */
-    width: 100%;
-}
-
-/* CONTEÚDO PRINCIPAL - AGORA VAI FICAR ABAIXO DAS BARRAS */
-#viewer-container {
     position: relative;
     width: 100%;
-    min-height: 600px;
-    margin-top: 0; /* Já vai ficar automaticamente abaixo */
+    margin-bottom: 20px;
 }
 
-/* NAVEGAÇÃO - PODE MANTER FIXA SE QUISER */
-nav {
+/* MENU DE NAVEGAÇÃO */
+.main-nav {
     position: fixed;
-    top: 150px;
+    top: 150px; /* Abaixo das barras */
     left: 20px;
     background: transparent;
     z-index: 100;
 }
 
-nav ul {
+.main-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: block;
 }
 
-nav li {
+.main-nav li {
     margin-bottom: 15px;
 }
 
-nav a {
+.main-nav a {
     display: inline-block;
     font-size: 24px;
     color: white;
     background-color: rgba(0, 84, 166, 0.7);
     text-decoration: none;
-    padding: 10px;
+    padding: 10px 15px;
     border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
-nav a:hover {
+.main-nav a:hover {
     background-color: rgba(0, 84, 166, 0.9);
 }
 
-/* LINK "PÁGINA INICIAL" NA BARRA AZUL */
-.home-link {
-    position: absolute;
-    left: 20px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    line-height: 43px;
+/* ESPAÇO PARA O CONTEÚDO (onde ficarão as animações) */
+body::after {
+    /* Já definido acima */
 }
 
-.home-link:hover {
-    text-decoration: underline;
-}
+/* O conteúdo das páginas HTML do Animate ficará automaticamente 
+   abaixo das barras, pois elas usam position: relative */
