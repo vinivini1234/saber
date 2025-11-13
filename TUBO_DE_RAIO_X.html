@@ -16,12 +16,16 @@
 <!-- write your code here -->
 <style>
   body {
-	overflow:hidden;
+    overflow: auto; /* Mude hidden para auto */
+    margin: 0;
+    padding: 0;
   }
   #animation_container, #_preload_div_ {
-	position:absolute;
-	margin:auto;
-	top:-100%;bottom:-100%;
+    position: relative; /* Mude absolute para relative */
+    margin: 20px auto; /* Margens normais */
+    top: 0; /* Remove negativo */
+    bottom: 0; /* Remove negativo */
+    left: 0;
   }
 </style>
 <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
@@ -83,3 +87,4 @@ function handleComplete(evt,comp) {
     <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:700px; width: 1400px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=images/_preloader.gif?1744636789753 style='vertical-align: middle; max-height: 100%'/></div>
 </body>
 </html>
+
