@@ -100,19 +100,25 @@ body > *:not(.main-nav):not(::before):not(::after) {
     height: 100% !important;
 }
 
-/* MENU SUSPENSO BÁSICO */
+/* MENU SUSPENSO NA BARRA BRANCA */
 .header-content {
     position: fixed;
-    top: 0;
+    top: 43px; /* COMEÇA NA BARRA BRANCA */
     left: 20px;
-    background: #0054A6;
-    color: white;
+    background: transparent; /* FUNDO TRANSPARENTE */
+    color: #0054A6; /* COR AZUL DO SENAC */
     padding: 0 20px;
-    height: 43px;
-    line-height: 43px;
+    height: 75px;
+    line-height: 75px;
     font-weight: bold;
     z-index: 1001;
     cursor: pointer;
+    font-size: 18px;
 }
+
+.header-content:hover {
+    color: #003d7a; /* AZUL MAIS ESCURO NO HOVER */
+}
+
 
 
