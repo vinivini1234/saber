@@ -16,18 +16,12 @@
 <!-- write your code here -->
 <style>
   body {
-    overflow: hidden; /* Remove barras de rolagem */
-    margin: 0;
-    padding: 118px 0 0 0; /* TOP: barras, LEFT: 0 (remove margem esquerda) */
-    width: 100vw;
-    height: 100vh;
+	overflow:hidden;
   }
   #animation_container, #_preload_div_ {
-    position: relative;
-    margin: 0 auto; /* Centraliza sem margens laterais */
-    width: 1400px;
-    height: 700px;
-    left: 250px; /* Adiciona espaço para o menu */
+	position:absolute;
+	margin:auto;
+	top:-100%;bottom:-100%;
   }
 </style>
 <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
@@ -81,7 +75,7 @@ function handleComplete(evt,comp) {
 <!-- write your code here -->
 </head>
 <body onload="init();" style="margin:0px;">
-	<div id="animation_container" style="background-color:rgba(0, 0, 0, 0.00); width:1400px; height:700px; margin: 0 auto;">
+	<div id="animation_container" style="background-color:rgba(0, 0, 0, 0.00); width:1400px; height:700px">
 		<canvas id="canvas" width="1400" height="700" style="position: absolute; display: none; background-color:rgba(0, 0, 0, 0.00);"></canvas>
 		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1400px; height:700px; position: absolute; left: 0px; top: 0px; display: none;">
 		</div>
@@ -89,6 +83,3 @@ function handleComplete(evt,comp) {
     <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:700px; width: 1400px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=images/_preloader.gif?1744636789753 style='vertical-align: middle; max-height: 100%'/></div>
 </body>
 </html>
-
-
-
