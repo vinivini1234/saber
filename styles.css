@@ -83,3 +83,11 @@ body > *:not(.main-nav):not(::before):not(::after) {
     z-index: 1;
     margin-top: 20px; /* Espaço extra */
 }
+/* CORREÇÃO PARA AS PÁGINAS DO ANIMATE */
+#animation_container, #_preload_div_ {
+    position: fixed !important;
+    top: 118px !important;
+    left: 250px !important;
+    margin: 0 !important;
+    z-index: 1 !important;
+}
