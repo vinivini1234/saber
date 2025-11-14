@@ -88,7 +88,16 @@ body > *:not(.main-nav):not(::before):not(::after) {
     position: fixed !important;
     top: 118px !important;
     left: 0px !important;
+    right: 0px !important;
+    bottom: 0px !important;
     margin: 0 !important;
     z-index: 1 !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+#canvas {
+    width: 100% !important;
+    height: 100% !important;
 }
 
