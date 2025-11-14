@@ -101,3 +101,18 @@ body > *:not(.main-nav):not(::before):not(::after) {
     height: 100% !important;
 }
 
+/* MENU SUSPENSO BÁSICO */
+.header-content {
+    position: fixed;
+    top: 0;
+    left: 20px;
+    background: #0054A6;
+    color: white;
+    padding: 0 20px;
+    height: 43px;
+    line-height: 43px;
+    font-weight: bold;
+    z-index: 1001;
+    cursor: pointer;
+}
+
