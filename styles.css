@@ -83,7 +83,7 @@ body > *:not(.main-nav):not(::before):not(::after) {
     margin-top: 20px;
 }
 
-/* CORREÇÃO PARA AS PÁGINAS DO ANIMATE */
+/* CORREÇÃO DEFINITIVA PARA BAIXA RESOLUÇÃO */
 #animation_container, #_preload_div_ {
     position: fixed !important;
     top: 118px !important;
@@ -92,16 +92,15 @@ body > *:not(.main-nav):not(::before):not(::after) {
     bottom: 0px !important;
     margin: 0 !important;
     z-index: 1 !important;
-    width: auto !important;
-    height: auto !important;
-    max-height: calc(100vh - 118px) !important; /* LIMITA ALTURA */
+    width: 100% !important;
+    height: calc(100vh - 118px) !important; /* ALTURA EXATA DO ESPAÇO DISPONÍVEL */
+    overflow: hidden !important;
 }
 
 #canvas {
     width: 100% !important;
-    height: auto !important; /* MUDEI: altura automática */
-    max-width: 100%;
-    object-fit: contain; /* MANTÉM PROPORÇÕES */
+    height: 100% !important;
+    object-fit: contain !important; /* MANTÉM PROPORÇÕES SEM CORTAR */
 }
 
 /* MENU SUSPENSO NA BARRA BRANCA */
@@ -154,5 +153,6 @@ body > *:not(.main-nav):not(::before):not(::after) {
 .header-content:hover .dropdown-menu {
     display: block;
 }
+
 
 
