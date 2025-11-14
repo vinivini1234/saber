@@ -136,7 +136,7 @@ body > *:not(.main-nav):not(::before):not(::after) {
     transition: opacity 0.3s;
     pointer-events: none;
     z-index: 1002;
-    overflow: hidden;
+    overflow: hidden; /* IMPEDE SCROLL NO MENU */
     border-top: 2px solid #0054A6;
 }
 
@@ -157,8 +157,8 @@ body > *:not(.main-nav):not(::before):not(::after) {
     align-items: flex-start;
     justify-content: flex-start;
 }
-/* REMOVER SCROLL DA PÁGINA */
-body {
-    overflow-x: hidden; /* SEM SCROLL HORIZONTAL */
-}
 
+/* IMPEDIR SCROLL NA PÁGINA QUANDO MENU ABERTO */
+body:has(.header-content:hover) {
+    overflow: hidden; /* BLOQUEIA SCROLL DO BODY */
+}
