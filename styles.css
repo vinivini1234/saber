@@ -121,7 +121,7 @@ body > *:not(.main-nav):not(::before):not(::after) {
     color: #003d7a; /* AZUL MAIS ESCURO NO HOVER */
 }
 
-/* MENU SUSPENSO COM LINKS REAIS */
+/* MENU SUSPENSO COM ESPAÇAMENTO AJUSTADO */
 .header-content {
     position: fixed;
     top: 43px;
@@ -143,31 +143,33 @@ body > *:not(.main-nav):not(::before):not(::after) {
     left: 0;
     right: 0;
     background: white;
-    padding: 30px 50px;
+    padding: 15px 50px; /* REDUZIDO */
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     border-top: 2px solid #0054A6;
     z-index: 1002;
-    display: none; /* ESCONDIDO POR PADRÃO */
+    display: none;
 }
 
 .dropdown-menu a {
     display: block;
     color: #0054A6;
     text-decoration: none;
-    padding: 8px 0;
+    padding: 6px 0; /* REDUZIDO */
     font-size: 16px;
+    line-height: 1.4; /* ESPAÇAMENTO ENTRE LINHAS MENOR */
 }
 
 .dropdown-menu a:hover {
     color: #003d7a;
+    background-color: #f0f0f0; /* FUNDO NO HOVER */
 }
 
-/* MAGIA: MOSTRAR MENU AO PASSAR MOUSE */
 .header-content:hover .dropdown-menu {
     display: block;
 }
 
-/* REMOVER SCROLL */
-body {
-    overflow-x: hidden;
+/* BARRAR SCROLL DEFINITIVAMENTE */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
 }
