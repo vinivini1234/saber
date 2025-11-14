@@ -11,6 +11,7 @@ body {
 
 /* BARRA AZUL SUPERIOR */
 body::before {
+    content: "";
     display: block;
     background-color: #004a8d;
     color: white;
@@ -119,6 +120,7 @@ body > *:not(.main-nav):not(::before):not(::after) {
 .header-content:hover {
     color: #003d7a; /* AZUL MAIS ESCURO NO HOVER */
 }
+
 
 
 
