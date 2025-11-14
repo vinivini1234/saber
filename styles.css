@@ -9,6 +9,7 @@ body {
     background-position: center;
     min-height: 100vh;
     padding-top: 118px;
+    overflow: hidden !important;
     overflow-x: hidden; /* REMOVE BARRA DE ROLAGEM HORIZONTAL */
 }
 
@@ -150,3 +151,4 @@ body > *:not(.main-nav):not(::before):not(::after) {
 .header-content:hover .dropdown-menu {
     display: block;
 }
+
