@@ -11,7 +11,6 @@ body {
 
 /* BARRA AZUL SUPERIOR */
 body::before {
-    content: "SABER - Sistema de Aprendizagem";
     display: block;
     background-color: #004a8d;
     color: white;
@@ -115,4 +114,5 @@ body > *:not(.main-nav):not(::before):not(::after) {
     z-index: 1001;
     cursor: pointer;
 }
+
 
