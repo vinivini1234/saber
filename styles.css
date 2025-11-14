@@ -87,7 +87,8 @@ body > *:not(.main-nav):not(::before):not(::after) {
 #animation_container, #_preload_div_ {
     position: fixed !important;
     top: 118px !important;
-    left: 250px !important;
+    left: 0px !important;
     margin: 0 !important;
     z-index: 1 !important;
 }
+
