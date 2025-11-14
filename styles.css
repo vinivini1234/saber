@@ -121,32 +121,42 @@ body > *:not(.main-nav):not(::before):not(::after) {
     color: #003d7a; /* AZUL MAIS ESCURO NO HOVER */
 }
 
-/* MENU SUSPENSO - VERSÃO CONFIÁVEL */
+/* MENU SUSPENSO - SEM GAP, LARGURA TOTAL, SEM SCROLL */
 .header-content::after {
     content: "";
-    position: absolute;
-    top: 75px; /* VOLTA ao original */
-    left: 0;
+    position: fixed; /* MUDEI: fixed em vez de absolute */
+    top: 118px; /* BARRA AZUL + BARRA BRANCA (43 + 75) */
+    left: 0; /* COMEÇA NA EXTREMA ESQUERDA */
+    right: 0; /* VAI ATÉ A EXTREMA DIREITA */
     background: white;
-    width: 100vw; /* LARGURA TOTAL DA TELA */
-    min-width: 100%;
+    width: 100vw;
+    min-height: 300px; /* ALTURA MÍNIMA */
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
     z-index: 1002;
+    overflow: hidden; /* IMPEDE SCROLL */
 }
 
-/* LINKS EM COLUNA - VERSÃO MELHORADA */
+/* LINKS EM COLUNA - CENTRALIZADOS */
 .header-content:hover::after {
     content: "Página Inicial|index.html\A Planos Anatômicos|PLANOS_ANATOMICOS.html\A Tubo de Raio X|TUBO_DE_RAIO_X.html\A Raios X de Frenagem|FRENA_CARAC.html\A Fuga Espalhada|FUGA_ESPAHADA.html\A Efeito Anódico|EFEITO_ANODICO.html\A Incidências|INCIDENCIAS.html";
     opacity: 1;
     pointer-events: auto;
     white-space: pre;
-    padding: 25px; /* MAIS ESPAÇO INTERNO */
+    padding: 30px;
     color: #0054A6;
     font-weight: normal;
-    line-height: 2.5; /* MAIS ESPAÇO ENTRE LINHAS */
+    line-height: 2.5;
     font-size: 16px;
-    box-sizing: border-box; /* GARANTE que padding não estoure */
+    text-align: center; /* CENTRALIZA O TEXTO */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* REMOVER SCROLL DA PÁGINA */
+body {
+    overflow-x: hidden; /* SEM SCROLL HORIZONTAL */
 }
