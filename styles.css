@@ -104,7 +104,7 @@ body > *:not(.main-nav):not(::before):not(::after) {
 /* MENU SUSPENSO NA BARRA BRANCA */
 .header-content {
     position: fixed;
-    top: 43px; /* COMEÇA NA BARRA BRANCA */
+    top: 50px; /* COMEÇA NA BARRA BRANCA */
     left: 200px;
     background: transparent; /* FUNDO TRANSPARENTE */
     color: #0054A6; /* COR AZUL DO SENAC */
@@ -120,6 +120,7 @@ body > *:not(.main-nav):not(::before):not(::after) {
 .header-content:hover {
     color: #003d7a; /* AZUL MAIS ESCURO NO HOVER */
 }
+
 
 
 
