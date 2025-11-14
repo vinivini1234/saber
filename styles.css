@@ -121,44 +121,53 @@ body > *:not(.main-nav):not(::before):not(::after) {
     color: #003d7a; /* AZUL MAIS ESCURO NO HOVER */
 }
 
-/* MENU SUSPENSO - COM SOMBRA E TEXTO LIMPO */
-.header-content::after {
-    content: "";
+/* MENU SUSPENSO COM LINKS REAIS */
+.header-content {
+    position: fixed;
+    top: 43px;
+    left: 200px;
+    background: transparent;
+    color: #0054A6;
+    padding: 0 20px;
+    height: 75px;
+    line-height: 75px;
+    font-weight: bold;
+    z-index: 1001;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.dropdown-menu {
     position: fixed;
     top: 118px;
     left: 0;
     right: 0;
     background: white;
-    width: 100vw;
-    min-height: 300px;
+    padding: 30px 50px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-    z-index: 1002;
-    overflow: hidden; /* IMPEDE SCROLL NO MENU */
     border-top: 2px solid #0054A6;
+    z-index: 1002;
+    display: none; /* ESCONDIDO POR PADRÃO */
 }
 
-/* TEXTO LIMPO À ESQUERDA */
-.header-content:hover::after {
-    content: "Página Inicial\A Planos Anatômicos\A Tubo de Raio X\A Raios X de Frenagem\A Fuga Espalhada\A Efeito Anódico\A Incidências";
-    opacity: 1;
-    pointer-events: auto;
-    white-space: pre;
-    padding: 30px;
-    padding-left: 50px;
+.dropdown-menu a {
+    display: block;
     color: #0054A6;
-    font-weight: normal;
-    line-height: 2.5;
+    text-decoration: none;
+    padding: 8px 0;
     font-size: 16px;
-    text-align: left;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
 }
 
-/* IMPEDIR SCROLL NA PÁGINA QUANDO MENU ABERTO */
-body:has(.header-content:hover) {
-    overflow: hidden; /* BLOQUEIA SCROLL DO BODY */
+.dropdown-menu a:hover {
+    color: #003d7a;
+}
+
+/* MAGIA: MOSTRAR MENU AO PASSAR MOUSE */
+.header-content:hover .dropdown-menu {
+    display: block;
+}
+
+/* REMOVER SCROLL */
+body {
+    overflow-x: hidden;
 }
