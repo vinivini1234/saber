@@ -5,8 +5,11 @@ body {
     font-family: Arial, sans-serif;
     background-image: url('background.jpeg');
     background-size: cover;
+    background-attachment: fixed; /* IMPEDE SCROLL DO BACKGROUND */
+    background-position: center;
     min-height: 100vh;
-    padding-top: 118px; /* 43px (azul) + 75px (branca) - ADICIONE ESTA LINHA */
+    padding-top: 118px;
+    overflow-x: hidden; /* REMOVE BARRA DE ROLAGEM HORIZONTAL */
 }
 
 /* BARRA AZUL SUPERIOR */
@@ -14,13 +17,8 @@ body::before {
     content: "";
     display: block;
     background-color: #004a8d;
-    color: white;
     height: 43px;
-    line-height: 43px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 18px;
-    position: fixed; /* MUDEI PARA FIXED */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -35,20 +33,20 @@ body::after {
     background-size: auto 60px;
     height: 75px;
     border-bottom: 1px solid #ddd;
-    position: fixed; /* MUDEI PARA FIXED */
-    top: 43px; /* ABAIXO DA BARRA AZUL */
+    position: fixed;
+    top: 43px;
     left: 0;
     width: 100%;
     z-index: 100;
 }
 
-/* MENU DE NAVEGAÇÃO */
+/* MENU DE NAVEGAÇÃO LATERAL */
 .main-nav {
     position: fixed;
-    top: 150px; /* Abaixo das barras (43 + 75 + 32px de margem) */
+    top: 150px;
     left: 20px;
     background: transparent;
-    z-index: 101; /* MAIS ALTO QUE AS BARRAS */
+    z-index: 101;
 }
 
 .main-nav ul {
@@ -77,12 +75,13 @@ body::after {
     background-color: rgba(0, 84, 166, 0.9);
 }
 
-/* CONTEÚDO PRINCIPAL - ADICIONE ESTE ESTILO */
+/* CONTEÚDO PRINCIPAL */
 body > *:not(.main-nav):not(::before):not(::after) {
     position: relative;
     z-index: 1;
-    margin-top: 20px; /* Espaço extra */
+    margin-top: 20px;
 }
+
 /* CORREÇÃO PARA AS PÁGINAS DO ANIMATE */
 #animation_container, #_preload_div_ {
     position: fixed !important;
@@ -104,26 +103,6 @@ body > *:not(.main-nav):not(::before):not(::after) {
 /* MENU SUSPENSO NA BARRA BRANCA */
 .header-content {
     position: fixed;
-    top: 47px; /* COMEÇA NA BARRA BRANCA */
-    left: 200px;
-    background: transparent; /* FUNDO TRANSPARENTE */
-    color: #0054A6; /* COR AZUL DO SENAC */
-    padding: 0 20px;
-    height: 75px;
-    line-height: 75px;
-    font-weight: bold;
-    z-index: 1001;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.header-content:hover {
-    color: #003d7a; /* AZUL MAIS ESCURO NO HOVER */
-}
-
-/* MENU SUSPENSO COM ESPAÇAMENTO AJUSTADO */
-.header-content {
-    position: fixed;
     top: 43px;
     left: 200px;
     background: transparent;
@@ -137,13 +116,17 @@ body > *:not(.main-nav):not(::before):not(::after) {
     font-size: 18px;
 }
 
+.header-content:hover {
+    color: #003d7a;
+}
+
 .dropdown-menu {
     position: fixed;
     top: 118px;
     left: 0;
     right: 0;
     background: white;
-    padding: 15px 50px; /* REDUZIDO */
+    padding: 15px 50px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     border-top: 2px solid #0054A6;
     z-index: 1002;
@@ -154,22 +137,16 @@ body > *:not(.main-nav):not(::before):not(::after) {
     display: block;
     color: #0054A6;
     text-decoration: none;
-    padding: 6px 0; /* REDUZIDO */
+    padding: 6px 0;
     font-size: 16px;
-    line-height: 1.4; /* ESPAÇAMENTO ENTRE LINHAS MENOR */
+    line-height: 1.4;
 }
 
 .dropdown-menu a:hover {
     color: #003d7a;
-    background-color: #f0f0f0; /* FUNDO NO HOVER */
+    background-color: #f0f0f0;
 }
 
 .header-content:hover .dropdown-menu {
     display: block;
-}
-
-/* BARRAR SCROLL DEFINITIVAMENTE */
-html, body {
-    overflow-x: hidden !important;
-    max-width: 100vw !important;
 }
