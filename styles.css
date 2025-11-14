@@ -94,11 +94,14 @@ body > *:not(.main-nav):not(::before):not(::after) {
     z-index: 1 !important;
     width: auto !important;
     height: auto !important;
+    max-height: calc(100vh - 118px) !important; /* LIMITA ALTURA */
 }
 
 #canvas {
     width: 100% !important;
-    height: 100% !important;
+    height: auto !important; /* MUDEI: altura automática */
+    max-width: 100%;
+    object-fit: contain; /* MANTÉM PROPORÇÕES */
 }
 
 /* MENU SUSPENSO NA BARRA BRANCA */
@@ -151,4 +154,5 @@ body > *:not(.main-nav):not(::before):not(::after) {
 .header-content:hover .dropdown-menu {
     display: block;
 }
+
 
