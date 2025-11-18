@@ -1,19 +1,10 @@
 <!DOCTYPE html>
-<!--
-	NOTES:
-	1. All tokens are represented by '$' sign in the template.
-	2. You can write your code only wherever mentioned.
-	3. All occurrences of existing tokens will be replaced by their appropriate values.
-	4. Blank lines will be removed automatically.
-	5. Remove unnecessary comments before creating your template.
--->
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="authoring-tool" content="Adobe_Animate_CC">
 <title>Incidências e Posicionamentos</title>
 <link rel="stylesheet" href="styles.css">
-<!-- write your code here -->
 <style>
   #animation_container {
 	position:absolute;
@@ -21,30 +12,57 @@
 	left:0;right:0;
 	top:0;bottom:0;
   }
+  
+  /* CSS PARA OS MENUS SUSPENSOS */
+  .header-content {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    background-color: #333;
+  }
+
+  .header-content .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+  }
+
+  .header-content .dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .header-content .dropdown-menu a:hover {
+    background-color: #f1f1f1;
+  }
+
+  .header-content:hover .dropdown-menu {
+    display: block;
+  }
+
+  .header-content:hover {
+    background-color: #555;
+  }
 </style>
-<nav>
-    <ul>
-        <li><a href="index.html">Página Inicial</a></li>
-		<li><a href="iPUNHO.html">Punho</a>></li>
-		<li><a href="iCOTOVELO.html">Cotovelo</a></li>
-		<li><a href="iUMERO.html">Úmero</a></li>
-        <li><a href="iOMBRO.html">Ombro</a></li>
-        <li><a href="iPERNA.html">Perna</a></li>
-		<li><a href="iJOELHO.html">Joelho</a>></li>
-		<li><a href="iCLOMBAR.html">Coluna Lombar</a>></li>
-		<li><a href="iMAMO.html">Câncer em Exame de Mamografia</a>></li>
-		<li><a href="iANAMAMO.html">Anatomia da Mama</a>></li>
-		<li><a href="iRADIOMAMO.html">Radioterapia de Feixe Externo</a>></li>
-		
-    </ul>
-</nav>
-<!-- write your code here -->
 </head>
 <body onload="init();" style="margin:0px;">
-		  <!-- ADICIONE ESTAS 2 LINHAS -->
-	<div class="header-content">
-    Conteúdo ▾
-    <div class="dropdown-menu">
+  <!-- MENUS SUSPENSOS PRINCIPAIS -->
+  <div style="background-color: #333; padding: 10px;">
+    <div class="header-content">
+      Conteúdo ▾
+      <div class="dropdown-menu">
         <a href="index.html">Página Inicial</a>
         <a href="PLANOS_ANATOMICOS.html">Planos Anatômicos</a>
         <a href="TUBO_DE_RAIOX.html">Tubo de Raio X</a>
@@ -52,14 +70,30 @@
         <a href="FUGA_ESPAHADA.html">Fótons de Raio X</a>
         <a href="EFEITO_ANODICO.html">Efeito Anódico</a>
         <a href="INCIDENCIAS.html">Incidências</a>
+      </div>
     </div>
-</div>
-    <!-- FIM DAS LINHAS ADICIONADAS -->
-	<div id="animation_container" style="background-color:rgba(64, 64, 64, 0.00); width:1400px; height:700px">
-		<canvas id="canvas" width="1400" height="700" style="position: absolute; display: block; background-color:rgba(64, 64, 64, 0.00);"></canvas>
-		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1400px; height:700px; position: absolute; left: 0px; top: 0px; display: block;">
-		</div>
-	</div>
-</body>
 
+    <div class="header-content">
+      Incidências ▾
+      <div class="dropdown-menu">
+        <a href="iPUNHO.html">Punho</a>
+        <a href="iCOTOVELO.html">Cotovelo</a>
+        <a href="iUMERO.html">Úmero</a>
+        <a href="iOMBRO.html">Ombro</a>
+        <a href="iPERNA.html">Perna</a>
+        <a href="iJOELHO.html">Joelho</a>
+        <a href="iCLOMBAR.html">Coluna Lombar</a>
+        <a href="iMAMO.html">Câncer em Exame de Mamografia</a>
+        <a href="iANAMAMO.html">Anatomia da Mama</a>
+        <a href="iRADIOMAMO.html">Radioterapia de Feixe Externo</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="animation_container" style="background-color:rgba(64, 64, 64, 0.00); width:1400px; height:700px">
+    <canvas id="canvas" width="1400" height="700" style="position: absolute; display: block; background-color:rgba(64, 64, 64, 0.00);"></canvas>
+    <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1400px; height:700px; position: absolute; left: 0px; top: 0px; display: block;">
+    </div>
+  </div>
+</body>
 </html>
