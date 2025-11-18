@@ -1,12 +1,89 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="authoring-tool" content="Adobe_Animate_CC">
-<title>Incidências e Posicionamentos</title>
-<link rel="stylesheet" href="styles.css">
-<style>
-  #animation_container {
+/* RESET E CONFIGURAÇÕES GERAIS */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('background.png');
+    background-size: cover;
+    background-attachment: fixed; /* IMPEDE SCROLL DO BACKGROUND */
+    background-position: center;
+    min-height: 100vh;
+    padding-top: 118px;
+    overflow: hidden !important;
+    overflow-x: hidden; /* REMOVE BARRA DE ROLAGEM HORIZONTAL */
+}
+
+/* BARRA AZUL SUPERIOR */
+body::before {
+    content: "";
+    display: block;
+    background-color: #004a8d;
+    height: 43px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+/* BARRA BRANCA COM LOGO */
+body::after {
+    content: "";
+    display: block;
+    background: white url('logo.png') no-repeat 20px center;
+    background-size: auto 60px;
+    height: 75px;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 43px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+/* MENU DE NAVEGAÇÃO LATERAL */
+.main-nav {
+    position: fixed;
+    top: 150px;
+    left: 20px;
+    background: transparent;
+    z-index: 101;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.main-nav li {
+    margin-bottom: 15px;
+}
+
+.main-nav a {
+    display: inline-block;
+    font-size: 24px;
+    color: white;
+    background-color: rgba(0, 84, 166, 0.7);
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.main-nav a:hover {
+    background-color: rgba(0, 84, 166, 0.9);
+}
+
+/* CONTEÚDO PRINCIPAL */
+body > *:not(.main-nav):not(::before):not(::after) {
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+}
+
+#animation_container, #_preload_div_ {
     position: fixed !important;
     top: 118px !important;
     left: 0px !important;
@@ -14,13 +91,22 @@
     bottom: 0px !important;
     margin: 0 !important;
     z-index: 1 !important;
-    width: 100vw !important;
+    width: 100vw !important; /* LARGURA TOTAL DA VIEWPORT */
     height: calc(100vh - 118px) !important;
     overflow: hidden !important;
-  }
+}
 
-  /* DOIS MENUS SUSPENSOS NA BARRA BRANCA */
-  .header-content {
+#canvas {
+    width: 100vw !important; /* FORÇA LARGURA TOTAL */
+    height: calc(100vh - 118px) !important; /* FORÇA ALTURA EXATA */
+    object-fit: fill !important; /* PREENCHE TODO O ESPAÇO */
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+}
+
+/* MENU SUSPENSO NA BARRA BRANCA */
+.header-content {
     position: fixed;
     top: 43px;
     left: 200px;
@@ -33,21 +119,13 @@
     z-index: 1001;
     cursor: pointer;
     font-size: 18px;
-  }
+}
 
-  .header-content.conteudo-menu {
-    left: 200px;
-  }
-
-  .header-content.incidencias-menu {
-    left: 350px; /* Ajuste a posição conforme necessário */
-  }
-
-  .header-content:hover {
+.header-content:hover {
     color: #003d7a;
-  }
+}
 
-  .dropdown-menu {
+.dropdown-menu {
     position: fixed;
     top: 118px;
     left: 0;
@@ -58,63 +136,26 @@
     border-top: 2px solid #0054A6;
     z-index: 1002;
     display: none;
-  }
+}
 
-  .dropdown-menu a {
+.dropdown-menu a {
     display: block;
     color: #0054A6;
     text-decoration: none;
     padding: 6px 0;
     font-size: 16px;
     line-height: 1.4;
-  }
+}
 
-  .dropdown-menu a:hover {
+.dropdown-menu a:hover {
     color: #003d7a;
     background-color: #f0f0f0;
-  }
+}
 
-  .header-content:hover .dropdown-menu {
+.header-content:hover .dropdown-menu {
     display: block;
-  }
-</style>
-</head>
-<body onload="init();" style="margin:0px;">
-  <!-- MENU CONTEÚDO -->
-  <div class="header-content conteudo-menu">
-    Conteúdo ▾
-    <div class="dropdown-menu">
-      <a href="index.html">Página Inicial</a>
-      <a href="PLANOS_ANATOMICOS.html">Planos Anatômicos</a>
-      <a href="TUBO_DE_RAIOX.html">Tubo de Raio X</a>
-      <a href="FRENA_CARAC.html">Geração de Raios X</a>
-      <a href="FUGA_ESPAHADA.html">Fótons de Raio X</a>
-      <a href="EFEITO_ANODICO.html">Efeito Anódico</a>
-      <a href="INCIDENCIAS.html">Incidências</a>
-    </div>
-  </div>
-
-  <!-- MENU INCIDÊNCIAS -->
-  <div class="header-content incidencias-menu">
-    Incidências ▾
-    <div class="dropdown-menu">
-      <a href="iPUNHO.html">Punho</a>
-      <a href="iCOTOVELO.html">Cotovelo</a>
-      <a href="iUMERO.html">Úmero</a>
-      <a href="iOMBRO.html">Ombro</a>
-      <a href="iPERNA.html">Perna</a>
-      <a href="iJOELHO.html">Joelho</a>
-      <a href="iCLOMBAR.html">Coluna Lombar</a>
-      <a href="iMAMO.html">Câncer em Exame de Mamografia</a>
-      <a href="iANAMAMO.html">Anatomia da Mama</a>
-      <a href="iRADIOMAMO.html">Radioterapia de Feixe Externo</a>
-    </div>
-  </div>
-
-  <div id="animation_container" style="background-color:rgba(64, 64, 64, 0.00);">
-    <canvas id="canvas" width="1400" height="700" style="position: absolute; display: block; background-color:rgba(64, 64, 64, 0.00);"></canvas>
-    <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1400px; height:700px; position: absolute; left: 0px; top: 0px; display: block;">
-    </div>
-  </div>
-</body>
-</html>
+}
+/* SEGUNDO MENU DE INCIDÊNCIAS */
+.header-content.incidencias-menu {
+    left: 350px; /* Ajuste a distância conforme necessário */
+}
