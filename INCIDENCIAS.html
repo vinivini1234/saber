@@ -10,56 +10,76 @@
 	position:absolute;
 	margin:auto;
 	left:0;right:0;
-	top:0;bottom:0;
+	top:50px;bottom:0; /* Ajuste para dar espaço para a barra */
   }
   
+  /* BARRA DE MENU SUPERIOR */
+  .menu-bar {
+    background-color: #2c3e50;
+    padding: 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
   /* CSS PARA OS MENUS SUSPENSOS */
   .header-content {
     position: relative;
     display: inline-block;
-    margin-right: 20px;
-    padding: 10px 15px;
+    margin: 0;
+    padding: 0 20px;
     cursor: pointer;
     color: white;
     font-weight: bold;
-    background-color: #333;
+    height: 40px;
+    line-height: 40px;
+    transition: background-color 0.3s;
+  }
+
+  .header-content:hover {
+    background-color: #34495e;
   }
 
   .header-content .dropdown-menu {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 200px;
+    background-color: white;
+    min-width: 250px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1000;
-    top: 100%;
+    z-index: 1001;
+    top: 40px;
     left: 0;
+    border-radius: 0 0 4px 4px;
   }
 
   .header-content .dropdown-menu a {
-    color: black;
+    color: #2c3e50;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ecf0f1;
+    transition: background-color 0.2s;
   }
 
   .header-content .dropdown-menu a:hover {
-    background-color: #f1f1f1;
+    background-color: #3498db;
+    color: white;
   }
 
   .header-content:hover .dropdown-menu {
     display: block;
   }
-
-  .header-content:hover {
-    background-color: #555;
-  }
 </style>
 </head>
-<body onload="init();" style="margin:0px;">
-  <!-- MENUS SUSPENSOS PRINCIPAIS -->
-  <div style="background-color: #333; padding: 10px;">
+<body onload="init();" style="margin:0px; padding-top:40px;">
+  <!-- BARRA DE MENU SUPERIOR -->
+  <div class="menu-bar">
     <div class="header-content">
       Conteúdo ▾
       <div class="dropdown-menu">
