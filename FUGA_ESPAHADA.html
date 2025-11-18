@@ -72,19 +72,36 @@ function handleComplete(evt,comp) {
 <!-- write your code here -->
 </head>
 <body onload="init();" style="margin:0px;">+
-			  <!-- ADICIONE ESTAS 2 LINHAS -->
-	<div class="header-content">
+<!-- ADICIONE ESTAS 2 LINHAS -->
+  <!-- MENU CONTEÚDO -->
+  <div class="header-content conteudo-menu">
     Conteúdo ▾
     <div class="dropdown-menu">
-        <a href="index.html">Página Inicial</a>
-        <a href="PLANOS_ANATOMICOS.html">Planos Anatômicos</a>
-        <a href="TUBO_DE_RAIOX.html">Tubo de Raio X</a>
-        <a href="FRENA_CARAC.html">Geração de Raios X</a>
-        <a href="FUGA_ESPAHADA.html">Fótons de Raio X</a>
-        <a href="EFEITO_ANODICO.html">Efeito Anódico</a>
-        <a href="INCIDENCIAS.html">Incidências</a>
+      <a href="index.html">Página Inicial</a>
+      <a href="PLANOS_ANATOMICOS.html">Planos Anatômicos</a>
+      <a href="TUBO_DE_RAIOX.html">Tubo de Raio X</a>
+      <a href="FRENA_CARAC.html">Geração de Raios X</a>
+      <a href="FUGA_ESPAHADA.html">Fótons de Raio X</a>
+      <a href="EFEITO_ANODICO.html">Efeito Anódico</a>
+      <a href="INCIDENCIAS.html">Incidências</a>
     </div>
-</div>
+  </div>
+  <!-- MENU INCIDÊNCIAS -->
+  <div class="header-content incidencias-menu">
+    Incidências ▾
+    <div class="dropdown-menu">
+      <a href="iPUNHO.html">Punho</a>
+      <a href="iCOTOVELO.html">Cotovelo</a>
+      <a href="iUMERO.html">Úmero</a>
+      <a href="iOMBRO.html">Ombro</a>
+      <a href="iPERNA.html">Perna</a>
+      <a href="iJOELHO.html">Joelho</a>
+      <a href="iCLOMBAR.html">Coluna Lombar</a>
+      <a href="iMAMO.html">Câncer em Exame de Mamografia</a>
+      <a href="iANAMAMO.html">Anatomia da Mama</a>
+      <a href="iRADIOMAMO.html">Radioterapia de Feixe Externo</a>
+    </div>
+  </div>
     <!-- FIM DAS LINHAS ADICIONADAS -->
 	<div id="animation_container" style="background-color:rgba(0, 0, 17, 0.00); width:1400px; height:700px">
 		<canvas id="canvas" width="1400" height="700" style="position: absolute; display: none; background-color:rgba(0, 0, 17, 0.00);"></canvas>
@@ -94,3 +111,4 @@ function handleComplete(evt,comp) {
     <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:700px; width: 1400px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=images/_preloader.gif?1756149106417 style='vertical-align: middle; max-height: 100%'/></div>
 </body>
 </html>
+
