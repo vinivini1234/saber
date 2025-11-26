@@ -1085,42 +1085,42 @@ if (reversed == null) { reversed = false; }
 		this.TRX_bt.addEventListener("click", fl_ClickToGoToWebPage);
 		
 		function fl_ClickToGoToWebPage() {
-			window.open("https://vinivini1234.github.io/website-demo/TUBO_DE_RAIOX.html", "_self");
+			window.open("https://vinivini1234.github.io/saber/TUBO_DE_RAIOX.html", "_self");
 		}
 		
 		
 		this.TR_bt.addEventListener("click", fl_ClickToGoToWebPage_2);
 		
 		function fl_ClickToGoToWebPage_2() {
-			window.open("https://vinivini1234.github.io/website-demo/FUGA_ESPAHADA.html", "_self");
+			window.open("https://vinivini1234.github.io/saber/FUGA_ESPAHADA.html", "_self");
 		}
 		
 		
 		this.RFC_bt.addEventListener("click", fl_ClickToGoToWebPage_4);
 		
 		function fl_ClickToGoToWebPage_4() {
-			window.open("https://vinivini1234.github.io/website-demo/FRENA_CARAC.html", "_self");
+			window.open("https://vinivini1234.github.io/saber/FRENA_CARAC.html", "_self");
 		}
 		
 		
 		this.EA_bt.addEventListener("click", fl_ClickToGoToWebPage_5);
 		
 		function fl_ClickToGoToWebPage_5() {
-			window.open("https://vinivini1234.github.io/website-demo/EFEITO_ANODICO.html", "_self");
+			window.open("https://vinivini1234.github.io/saber/EFEITO_ANODICO.html", "_self");
 		}
 		
 		
 		this.PA_bt.addEventListener("click", fl_ClickToGoToWebPage_6);
 		
 		function fl_ClickToGoToWebPage_6() {
-			window.open("https://vinivini1234.github.io/website-demo/PLANOS_ANATOMICOS.html", "_self");
+			window.open("https://vinivini1234.github.io/saber/PLANOS_ANATOMICOS.html", "_self");
 		}
 		
 		
 		this.IP_bt.addEventListener("click", fl_ClickToGoToWebPage_7);
 		
 		function fl_ClickToGoToWebPage_7() {
-			window.open("https://vinivini1234.github.io/website-demo/INCIDENCIAS.html", "_self");
+			window.open("https://vinivini1234.github.io/saber/INCIDENCIAS.html", "_self");
 		}
 		this.stop();
 		
